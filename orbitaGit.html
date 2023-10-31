@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Órbita da Terra com Bola Rotativa</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #000;
+    overflow: hidden;
+  }
+
+  .sol-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: #ffcc00; /* Cor do sol */
+  }
+
+  .terra-orbita {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 2px dashed #00aaff; /* Cor da órbita da Terra */
+    animation: girar 5s linear infinite;
+  }
+
+  .bola-pequena {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #00aaff; /* Cor da bola */
+    border-radius: 50%;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: girarBola 5s linear infinite;
+  }
+
+  @keyframes girar {
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+  @keyframes girarBola {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="sol-container">
+    <div class="terra-orbita">
+      <div class="bola-pequena"></div>
+    </div>
+  </div>
+</body>
+</html>
